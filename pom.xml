@@ -24,14 +24,22 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>appassembler-maven-plugin</artifactId>
 				<version>1.10</version>
-				<configuration>
-					<programs>
-						<program>
-							<mainClass>com.example.comicloader.App</mainClass>
-							<id>cldr</id>
-						</program>
-					</programs>
-				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<configuration>
+							<programs>
+								<program>
+									<mainClass>com.example.comicloader.App</mainClass>
+									<id>cldr</id>
+								</program>
+							</programs>
+						</configuration>
+						<goals>
+							<goal>assemble</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 		</plugins>

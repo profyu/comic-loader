@@ -23,6 +23,8 @@ public class App {
 		options.addOption("o", "output-dir", true, "Output directory path");
 		options.addOption("h", "help", false, "Print command line manual");
 
+		
+		
 		DefaultParser cmdParser = new DefaultParser();
 		try {
 
