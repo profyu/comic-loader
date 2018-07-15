@@ -1,0 +1,14 @@
+pipeline:
+  build:
+    image: maven
+    commands:
+      - mvn clean package
+  deploy:
+    image: plugins/ecr
+    repo: 115634363511.dkr.ecr.us-east-1.amazonaws.com/comic-loader
+    registry: 115634363511.dkr.ecr.us-east-1.amazonaws.com
+    dockerfile: target/docker/Dockerfile
+    secrets: [ ecr_access_key, ecr_secret_key, ecr_region]
+    tags:
+      - latest
+  
